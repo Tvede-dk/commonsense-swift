@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A780FC4D1FAF92DD00D16449 /* csenseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A780FC4E1FAF92DD00D16449 /* csenseTests.framework */; };
 		A7D3CDA01FADE5E400A8633F /* csenseSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D3CD961FADE5E300A8633F /* csenseSwift.framework */; };
-		A7D3CDA51FADE5E400A8633F /* csenseSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3CDA41FADE5E400A8633F /* csenseSwiftTests.swift */; };
 		A7D3CDA71FADE5E400A8633F /* csenseSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = A7D3CD991FADE5E300A8633F /* csenseSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7D3CE3D1FADEA3900A8633F /* BoolExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3CE3C1FADEA3900A8633F /* BoolExtensions.swift */; };
 		A7D3CE411FADEA4000A8633F /* BoolExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3CE401FADEA3F00A8633F /* BoolExtensionsTests.swift */; };
@@ -18,6 +17,9 @@
 		A7D3CE661FAE950E00A8633F /* DictionaryExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3CE651FAE950E00A8633F /* DictionaryExtensionsTests.swift */; };
 		A7DF87C31FAF8FF800153633 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF87C21FAF8FF800153633 /* OrderedDictionary.swift */; };
 		A7DF87C61FAF923300153633 /* OrderedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF87C51FAF923300153633 /* OrderedDictionaryTests.swift */; };
+		BC23656B5C685A2EBAB86247 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC236FE13E4CF4FD6D7B9C52 /* StringExtensions.swift */; };
+		BC2366D203A15587CBA6BD66 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2369C186A07024A1DFCA26 /* IntExtensions.swift */; };
+		BC236D47B9235270EECC7B22 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC236035EB1EA9C593D28811 /* Types.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,6 @@
 		A7D3CD991FADE5E300A8633F /* csenseSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = csenseSwift.h; sourceTree = "<group>"; };
 		A7D3CD9A1FADE5E400A8633F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7D3CD9F1FADE5E400A8633F /* csenseSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = csenseSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7D3CDA41FADE5E400A8633F /* csenseSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = csenseSwiftTests.swift; sourceTree = "<group>"; };
 		A7D3CDA61FADE5E400A8633F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7D3CE3C1FADEA3900A8633F /* BoolExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolExtensions.swift; sourceTree = "<group>"; };
 		A7D3CE401FADEA3F00A8633F /* BoolExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolExtensionsTests.swift; sourceTree = "<group>"; };
@@ -45,6 +46,9 @@
 		A7D3CE651FAE950E00A8633F /* DictionaryExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensionsTests.swift; sourceTree = "<group>"; };
 		A7DF87C21FAF8FF800153633 /* OrderedDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 		A7DF87C51FAF923300153633 /* OrderedDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedDictionaryTests.swift; sourceTree = "<group>"; };
+		BC236035EB1EA9C593D28811 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		BC2369C186A07024A1DFCA26 /* IntExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
+		BC236FE13E4CF4FD6D7B9C52 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 				A7D3CE3A1FADEA3900A8633F /* extensions */,
 				A7D3CD991FADE5E300A8633F /* csenseSwift.h */,
 				A7D3CD9A1FADE5E400A8633F /* Info.plist */,
+				BC236035EB1EA9C593D28811 /* Types.swift */,
 			);
 			path = csenseSwift;
 			sourceTree = "<group>";
@@ -110,7 +115,6 @@
 			children = (
 				A7DF87C41FAF922200153633 /* datastructures */,
 				A7D3CE3E1FADEA3F00A8633F /* extensions */,
-				A7D3CDA41FADE5E400A8633F /* csenseSwiftTests.swift */,
 				A7D3CDA61FADE5E400A8633F /* Info.plist */,
 			);
 			path = csenseSwiftTests;
@@ -129,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				A7D3CE3C1FADEA3900A8633F /* BoolExtensions.swift */,
+				BC236FE13E4CF4FD6D7B9C52 /* StringExtensions.swift */,
+				BC2369C186A07024A1DFCA26 /* IntExtensions.swift */,
 			);
 			path = primitives;
 			sourceTree = "<group>";
@@ -297,6 +303,9 @@
 				A7DF87C31FAF8FF800153633 /* OrderedDictionary.swift in Sources */,
 				A7D3CE4C1FAE7D7700A8633F /* ArrayExtensions.swift in Sources */,
 				A7D3CE4F1FAE8A4A00A8633F /* DictionaryExtensions.swift in Sources */,
+				BC23656B5C685A2EBAB86247 /* StringExtensions.swift in Sources */,
+				BC2366D203A15587CBA6BD66 /* IntExtensions.swift in Sources */,
+				BC236D47B9235270EECC7B22 /* Types.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +313,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7D3CDA51FADE5E400A8633F /* csenseSwiftTests.swift in Sources */,
 				A7DF87C61FAF923300153633 /* OrderedDictionaryTests.swift in Sources */,
 				A7D3CE661FAE950E00A8633F /* DictionaryExtensionsTests.swift in Sources */,
 				A7D3CE411FADEA4000A8633F /* BoolExtensionsTests.swift in Sources */,
@@ -447,6 +455,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = csenseSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.commonsense.csenseSwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -469,6 +478,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = csenseSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.commonsense.csenseSwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
