@@ -7,5 +7,7 @@ import Foundation
 
 
 public typealias Function<T> = (T) -> Void
+public typealias MutatingFunction<T> =  (inout T) -> Void
+public typealias FunctionResult<T, U> = (T) -> U
 
 public typealias EmptyFunction = () -> Void

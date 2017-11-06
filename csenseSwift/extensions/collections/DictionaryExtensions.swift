@@ -71,11 +71,20 @@ public extension OrderedDictionary  where Key == Int  {
 
 public extension OrderedDictionary {
     /**
-     * safely adds an item for a given key or creates a new array with the item if not pressented
+     * safely adds an item for a given key or creates a new array with the item if not presented
      */
-    public mutating func addOrCreate<T>(key : Key,  item : T)  where Value == Array<T> {
+    public mutating func addOrCreate<T>(key : Key,  item : T)  where Value == [T] {
         var list = self[key] ?? []
         list.append(item)
+        self.updateValue(list, forKey: key)
+    }
+
+    /**
+     * safely adds the given items for a given key or creates it with the given values if not there (otherwise appends)
+     */
+    public mutating func addOrCreate<T>(key : Key, items : [T]) where Value == [T] {
+        var list : [T] = self[key] ?? []
+        list.append(contentsOf: items)
         self.updateValue(list, forKey: key)
     }
 }

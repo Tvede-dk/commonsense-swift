@@ -22,4 +22,23 @@ public extension Bool {
         }
     }
 
+    /**
+     * Performs the given action iff the value is true, otherwise nothing happens
+     */
+    public func ifTrue(_ action: EmptyFunction) {
+        if self {
+            action()
+        }
+    }
+
+    /**
+     * Performs the given action iff the value is false, otherwise nothing happens
+     */
+    public func ifFalse(_ action: EmptyFunction) {
+        if !self {
+            action()
+        }
+    }
+
+
 }
