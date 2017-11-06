@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A780FC4D1FAF92DD00D16449 /* csenseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A780FC4E1FAF92DD00D16449 /* csenseTests.framework */; };
+		A7B880961FB114BA00D40077 /* FunctionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B880951FB114BA00D40077 /* FunctionExtensions.swift */; };
 		A7D3CDA01FADE5E400A8633F /* csenseSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D3CD961FADE5E300A8633F /* csenseSwift.framework */; };
 		A7D3CDA71FADE5E400A8633F /* csenseSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = A7D3CD991FADE5E300A8633F /* csenseSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7D3CE3D1FADEA3900A8633F /* BoolExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3CE3C1FADEA3900A8633F /* BoolExtensions.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		A780FC4E1FAF92DD00D16449 /* csenseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = csenseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7B880951FB114BA00D40077 /* FunctionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionExtensions.swift; sourceTree = "<group>"; };
 		A7D3CD961FADE5E300A8633F /* csenseSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = csenseSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D3CD991FADE5E300A8633F /* csenseSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = csenseSwift.h; sourceTree = "<group>"; };
 		A7D3CD9A1FADE5E400A8633F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				A7D3CE4A1FAE7D6600A8633F /* collections */,
 				A7D3CE3B1FADEA3900A8633F /* primitives */,
+				A7B880951FB114BA00D40077 /* FunctionExtensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7D3CE3D1FADEA3900A8633F /* BoolExtensions.swift in Sources */,
+				A7B880961FB114BA00D40077 /* FunctionExtensions.swift in Sources */,
 				A7DF87C31FAF8FF800153633 /* OrderedDictionary.swift in Sources */,
 				A7D3CE4C1FAE7D7700A8633F /* ArrayExtensions.swift in Sources */,
 				A7D3CE4F1FAE8A4A00A8633F /* DictionaryExtensions.swift in Sources */,
