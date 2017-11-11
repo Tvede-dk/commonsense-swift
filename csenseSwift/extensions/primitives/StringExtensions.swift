@@ -8,14 +8,16 @@ import Foundation
 
 extension Optional where Wrapped == String {
 
+    public var isNilOrBlank : Bool {
+        get{ return self?.isBlank != false }
+    }
 }
 
 extension String {
 
     public var isBlank: Bool {
         get {
-            return self == ""
-                    || self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty
+            return self == "" || self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty
         }
     }
 
