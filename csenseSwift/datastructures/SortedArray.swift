@@ -8,21 +8,24 @@
 
 import Foundation
 
-class SortedArray<T> {
-    // MARK: variables and types
-    typealias SortedArrayIndex = (index: Int, value: T)
+public typealias SortedArrayIndex<T> = (index: Int, value: T)
 
-    private var data: [SortedArrayIndex] = []
+public class SortedArray<T> {
+    // MARK: variables and types
+
+    public typealias Index = SortedArrayIndex<T>
+
+    private var data: [Index] = []
 
     // MARK: Constructors
 
-    init() {
+    public init() {
 
     }
 
     // MARK: public functions
     @discardableResult
-    func set(value: T, forIndex: Int) -> T? {
+    public func set(value: T, forIndex: Int) -> T? {
         let index = data.binarySearchClosest(key: forIndex, extractor: extractorFunc)
         //overwrite data
         if data.isIndexValid(index) && data[index].index == forIndex {
@@ -37,7 +40,7 @@ class SortedArray<T> {
     }
 
     @discardableResult
-    func remove(forIndex: Int) -> T? {
+    public func remove(forIndex: Int) -> T? {
         let index = data.binarySearch(key: forIndex, extractor: extractorFunc)
         return index.ifNotNil(action: { index in
             return remove(forRawIndex: index)
@@ -45,20 +48,24 @@ class SortedArray<T> {
     }
 
     @discardableResult
-    func remove(forRawIndex: Int) -> T? {
+    public func remove(forRawIndex: Int) -> T? {
         return data.remove(at: forRawIndex).value
     }
 
-    func get(forIndex: Int) -> T? {
+    public func get(forIndex: Int) -> T? {
         let index = data.binarySearch(key: forIndex, extractor: extractorFunc)
         return getOpt(index: index)
     }
 
-    func get(forRawIndex: Int) -> T? {
+    public func get(forRawIndex: Int) -> T? {
         return getOpt(index: forRawIndex)
     }
 
-    var count: Int {
+    public func removeAll() {
+        data.removeAll()
+    }
+
+    public var count: Int {
         return data.count
     }
 
@@ -69,7 +76,26 @@ class SortedArray<T> {
         })
     }
 
-    private let extractorFunc: FunctionResult<SortedArrayIndex, Int> = { (pair: SortedArrayIndex) in
+    private let extractorFunc: FunctionResult<Index, Int> = { (pair: Index) in
         pair.index
+    }
+}
+
+public func ==<T>(first: SortedArrayIndex<T>, second: SortedArrayIndex<T>) -> Bool where T: Equatable {
+    return first.value == second.value
+}
+
+public func ==<T>(first: [SortedArrayIndex<T>], second: [SortedArrayIndex<T>]) -> Bool where T: Equatable {
+    return first.elementsEqual(second) { (first: SortedArrayIndex<T>, second: SortedArrayIndex<T>) in
+        return first == second
+    }
+}
+
+public extension SortedArray where T: Equatable {
+    public static func ==(first: SortedArray, second: SortedArray) -> Bool {
+        if first.count != second.count {
+            return false
+        }
+        return first.data == second.data
     }
 }

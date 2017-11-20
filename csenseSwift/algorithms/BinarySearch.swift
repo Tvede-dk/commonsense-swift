@@ -16,12 +16,12 @@ public extension Array where Element: Comparable {
 
 public extension Array {
 
-    public func binarySearch<T:Comparable>(key: T, extractor: FunctionResult<Element, T>) -> Int? {
+    public func binarySearch<T: Comparable>(key: T, extractor: FunctionResult<Element, T>) -> Int? {
         let temp = binarySearch(key: key, extractor: extractor, defaultValueFunction: { _ in -1 })
         return temp.isNegative.map(ifTrue: nil, ifFalse: temp)
     }
 
-    public func binarySearchClosest<T:Comparable>(key: T, extractor: FunctionResult<Element, T>) -> Int {
+    public func binarySearchClosest<T: Comparable>(key: T, extractor: FunctionResult<Element, T>) -> Int {
         return binarySearch(key: key, extractor: extractor, defaultValueFunction: { value in value })
     }
 
@@ -30,9 +30,9 @@ public extension Array {
      *
      * defaultValueFunction : given the middle (from the end of the iteration), calculates the result.
      */
-    private func binarySearch<T:Comparable>(key: T,
-                                            extractor: FunctionResult<Element, T>,
-                                            defaultValueFunction: FunctionResult<Int, Int>) -> Int {
+    private func binarySearch<T: Comparable>(key: T,
+                                             extractor: FunctionResult<Element, T>,
+                                             defaultValueFunction: FunctionResult<Int, Int>) -> Int {
         var lowerBound = 0
         var upperBound = count
         while lowerBound < upperBound {

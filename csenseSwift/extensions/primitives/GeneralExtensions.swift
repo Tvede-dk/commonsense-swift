@@ -9,19 +9,11 @@
 import Foundation
 
 public extension Optional {
-    /**
-     * Uses the value iff safe (not nil)
-     */
-    public func ifNotNil(action: Function<Wrapped>) {
-        if let safeSelf = self {
-            action(safeSelf)
-        }
-    }
 
     /**
      * Uses the value iff safe (not nil)
      */
-
+    @discardableResult
     public func ifNotNil<T>(action: FunctionResult<Wrapped, T?>) -> T? {
         if let safeSelf = self {
             return action(safeSelf)
@@ -32,10 +24,8 @@ public extension Optional {
     /**
      * Another name for "iFNotNil"
      */
-    public func useSafe(action: Function<Wrapped>) {
-        ifNotNil(action: action)
-    }
 
+    @discardableResult
     public func useSafe<T>(action: FunctionResult<Wrapped, T?>) -> T? {
         return ifNotNil(action: action)
     }

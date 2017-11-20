@@ -6,6 +6,20 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		A7646D891FB9C5B40011BBEF /* csenseSwiftFramework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = A7646D8A1FB9C5B40011BBEF /* Build configuration list for PBXAggregateTarget "csenseSwiftFramework" */;
+			buildPhases = (
+				A7646D8D1FB9C5E90011BBEF /* Generate framework */,
+			);
+			dependencies = (
+			);
+			name = csenseSwiftFramework;
+			productName = csenseSwiftFramework;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		A713AC7C1FB1F0E30010BD7E /* GeneralExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A713AC7B1FB1F0E30010BD7E /* GeneralExtensions.swift */; };
 		A7646D281FB553100011BBEF /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7646D271FB553100011BBEF /* SortedArray.swift */; };
@@ -25,6 +39,7 @@
 		BC23608F7D5B453D54570ADF /* SortedArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC236A796F8E50EBA0FF59F4 /* SortedArrayTests.swift */; };
 		BC23656B5C685A2EBAB86247 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC236FE13E4CF4FD6D7B9C52 /* StringExtensions.swift */; };
 		BC2366D203A15587CBA6BD66 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2369C186A07024A1DFCA26 /* IntExtensions.swift */; };
+		BC236913FB0647943D2DC81A /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC236AEA20E7A1244CDB0F49 /* GlobalFunctions.swift */; };
 		BC236D050D4930F7A1F9FA81 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2367905B1D32DBABE5D7E3 /* StringExtensionsTests.swift */; };
 		BC236D47B9235270EECC7B22 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC236035EB1EA9C593D28811 /* Types.swift */; };
 /* End PBXBuildFile section */
@@ -62,6 +77,7 @@
 		BC2367905B1D32DBABE5D7E3 /* StringExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionsTests.swift; sourceTree = "<group>"; };
 		BC2369C186A07024A1DFCA26 /* IntExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
 		BC236A796F8E50EBA0FF59F4 /* SortedArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedArrayTests.swift; sourceTree = "<group>"; };
+		BC236AEA20E7A1244CDB0F49 /* GlobalFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		BC236FE13E4CF4FD6D7B9C52 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +145,7 @@
 				A7D3CD991FADE5E300A8633F /* csenseSwift.h */,
 				A7D3CD9A1FADE5E400A8633F /* Info.plist */,
 				BC236035EB1EA9C593D28811 /* Types.swift */,
+				BC236AEA20E7A1244CDB0F49 /* GlobalFunctions.swift */,
 			);
 			path = csenseSwift;
 			sourceTree = "<group>";
@@ -278,6 +295,10 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = commonsense;
 				TargetAttributes = {
+					A7646D891FB9C5B40011BBEF = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
 					A7D3CD951FADE5E300A8633F = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Manual;
@@ -302,6 +323,7 @@
 			targets = (
 				A7D3CD951FADE5E300A8633F /* csenseSwift */,
 				A7D3CD9E1FADE5E400A8633F /* csenseSwiftTests */,
+				A7646D891FB9C5B40011BBEF /* csenseSwiftFramework */,
 			);
 		};
 /* End PBXProject section */
@@ -323,6 +345,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A7646D8D1FB9C5E90011BBEF /* Generate framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n\n# make sure the output directory exists\n\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n\n# Step 1. Build Device and Simulator versions\n\nxcodebuild -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build ENABLE_BITCODE=\"YES\"\n\nxcodebuild -target \"${PROJECT_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build ENABLE_BITCODE=\"YES\"\n\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\n\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n\n# Step 3. Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\n\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/.\"\n\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\n\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule\"\n\nfi\n\n\n# Step 4. Create universal binary file using lipo and place the combined executable in the copied framework directory\n\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n\n\n# Step 5. Convenience step to copy the framework to the project's directory\n\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\n\n\n# Step 6. Convenience step to open the project's directory in Finder\n\nopen \"${BUILD_DIR}/${CONFIGURATION}-universal\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A7D3CD911FADE5E300A8633F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -339,6 +378,7 @@
 				BC23656B5C685A2EBAB86247 /* StringExtensions.swift in Sources */,
 				BC2366D203A15587CBA6BD66 /* IntExtensions.swift in Sources */,
 				BC236D47B9235270EECC7B22 /* Types.swift in Sources */,
+				BC236913FB0647943D2DC81A /* GlobalFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +406,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		A7646D8B1FB9C5B40011BBEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A7646D8C1FB9C5B40011BBEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		A7D3CDA81FADE5E400A8633F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -482,6 +538,7 @@
 		A7D3CDAB1FADE5E400A8633F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BITCODE_GENERATION_MODE = marker;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
@@ -505,6 +562,7 @@
 		A7D3CDAC1FADE5E400A8633F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BITCODE_GENERATION_MODE = bitcode;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
@@ -560,6 +618,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A7646D8A1FB9C5B40011BBEF /* Build configuration list for PBXAggregateTarget "csenseSwiftFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7646D8B1FB9C5B40011BBEF /* Debug */,
+				A7646D8C1FB9C5B40011BBEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A7D3CD901FADE5E300A8633F /* Build configuration list for PBXProject "csenseSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
