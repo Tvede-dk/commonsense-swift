@@ -1,0 +1,11 @@
+framework module csenseTests {
+  umbrella header "csenseTests.h"
+
+  export *
+  module * { export * }
+}
+
+module csenseTests.Swift {
+    header "csenseTests-Swift.h"
+    requires objc
+}

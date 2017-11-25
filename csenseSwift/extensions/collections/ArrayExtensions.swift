@@ -34,9 +34,8 @@ extension Array {
             return nil
         }
     }
-    
-    
 }
-public func += <T>(left : inout Array<T>, right : T){
+
+public func +=<T>(left: inout [T], right: T) {
     left.append(right)
 }

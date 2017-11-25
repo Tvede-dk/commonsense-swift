@@ -1,0 +1,9 @@
+{
+  "commitish" : "e8dc3e207a2bb688bccae4517ad6abf148bae4cd",
+  "iOS" : [
+    {
+      "name" : "csenseTests",
+      "hash" : "3dc883fc371834dad607ebd99486ee256a1a66a8b2fb9272579c32ab422f84f7"
+    }
+  ]
+}

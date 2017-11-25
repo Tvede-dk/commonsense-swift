@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 /**
  Creates a safe method pointer for use in allocing closures.
  */
@@ -23,7 +22,6 @@ public func methodPointer<T: AnyObject>(obj: T,
         method(safeObj)()
     }
 }
-
 
 public func methodPointer<T: AnyObject, In>(obj: T,
                                             method:
@@ -63,4 +61,3 @@ public func methodPointer<T: AnyObject, In, Out>(obj: T,
         return nil
     }
 }
-
