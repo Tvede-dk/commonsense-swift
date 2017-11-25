@@ -27,6 +27,7 @@
 		A7646D2D1FB555DF0011BBEF /* IntExtensionstests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7646D2C1FB555DF0011BBEF /* IntExtensionstests.swift */; };
 		A7684D081FC9971D00B0367C /* cartfile.private in Resources */ = {isa = PBXBuildFile; fileRef = A7684D071FC9971D00B0367C /* cartfile.private */; };
 		A7684D0A1FC997E700B0367C /* csenseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7684D091FC997E700B0367C /* csenseTests.framework */; };
+		A7684D0B1FC99D1000B0367C /* csenseSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D3CD961FADE5E300A8633F /* csenseSwift.framework */; };
 		A7B880961FB114BA00D40077 /* FunctionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B880951FB114BA00D40077 /* FunctionExtensions.swift */; };
 		A7D3CDA71FADE5E400A8633F /* csenseSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = A7D3CD991FADE5E300A8633F /* csenseSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7D3CE3D1FADEA3900A8633F /* BoolExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3CE3C1FADEA3900A8633F /* BoolExtensions.swift */; };
@@ -95,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7684D0B1FC99D1000B0367C /* csenseSwift.framework in Frameworks */,
 				A7684D0A1FC997E700B0367C /* csenseTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
