@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Array {
+public extension Array {
     /**
       * Tells if there is a key with the given index
       */
@@ -35,6 +35,16 @@ extension Array {
         }
     }
 }
+
+public extension Optional where Wrapped == Array<Any> {
+    /**
+     *
+     */
+    public func countOrZero() -> Int {
+        return self?.count ?? 0
+    }
+}
+
 
 public func +=<T>(left: inout [T], right: T) {
     left.append(right)

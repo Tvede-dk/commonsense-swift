@@ -11,13 +11,12 @@ import csenseTests
 @testable import csenseSwift
 import XCTest
 
-class IntExtensionsTests : XCTestCase {
-    
-    func testMiddle(){
+class IntExtensionsTests: XCTestCase {
+
+    func testMiddle() {
         0.middle(upperBound: 100).assert(50)
         50.middle(upperBound: 100).assert(75)
-        20.middle(upperBound : 50).assert(35)
-        
+        20.middle(upperBound: 50).assert(35)
     }
-    
+
 }

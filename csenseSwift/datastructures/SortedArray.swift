@@ -26,7 +26,7 @@ public class SortedArray<T> {
     // MARK: public functions
     @discardableResult
     public func set(value: T, forIndex: Int) -> T? {
-        let index = data.binarySearchClosest(key: forIndex, extractor: extractorFunc)
+        let index = data.binarySearchClosest(valueToFind: forIndex, extractor: extractorFunc)
         //overwrite data
         if data.isIndexValid(index) && data[index].index == forIndex {
             let old = data[index]
@@ -41,7 +41,7 @@ public class SortedArray<T> {
 
     @discardableResult
     public func remove(forIndex: Int) -> T? {
-        let index = data.binarySearch(key: forIndex, extractor: extractorFunc)
+        let index = data.binarySearch(valueToFind: forIndex, extractor: extractorFunc)
         return index.ifNotNil(action: { index in
             return remove(forRawIndex: index)
         })
@@ -53,7 +53,7 @@ public class SortedArray<T> {
     }
 
     public func get(forIndex: Int) -> T? {
-        let index = data.binarySearch(key: forIndex, extractor: extractorFunc)
+        let index = data.binarySearch(valueToFind: forIndex, extractor: extractorFunc)
         return getOpt(index: index)
     }
 
