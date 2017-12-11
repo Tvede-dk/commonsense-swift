@@ -36,15 +36,16 @@ public extension Array {
     }
 }
 
-public extension Optional where Wrapped == Array<Any> {
+public extension Optional where Wrapped: Collection {
     /**
      *
      */
-    public func countOrZero() -> Int {
-        return self?.count ?? 0
+    public var countOrZero: Wrapped.IndexDistance {
+        get {
+            return self?.count ?? 0
+        }
     }
 }
-
 
 public func +=<T>(left: inout [T], right: T) {
     left.append(right)
