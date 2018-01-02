@@ -69,6 +69,13 @@ public class SortedArray<T> {
         return data.count
     }
 
+    /**
+     * returns the raw index of the given index (the sparse index to a [0 -> count] index)
+     */
+    public func rawIndexOf(forIndex: Int) -> Int? {
+        return data.binarySearch(valueToFind: forIndex, extractor: extractorFunc)
+    }
+
     // MARK: internal functions
     private func getOpt(index: Int?) -> T? {
         return index.ifNotNil(action: { index in
