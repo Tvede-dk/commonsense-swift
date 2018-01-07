@@ -53,8 +53,16 @@ public class SortedArray<T> {
     }
 
     public func get(forIndex: Int) -> T? {
+        return getWithRawIndex(forIndex: forIndex)?.item
+    }
+
+    public func getWithRawIndex(forIndex: Int) -> (item: T, rawIndex: Int )? {
         let index = data.binarySearch(valueToFind: forIndex, extractor: extractorFunc)
-        return getOpt(index: index)
+        let item = getOpt(index: index)
+        if let item = item, let index = index {
+            return (item, index)
+        }
+        return nil
     }
 
     public func get(forRawIndex: Int) -> T? {
