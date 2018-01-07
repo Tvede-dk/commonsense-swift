@@ -1,9 +1,18 @@
 {
-  "commitish" : "e8dc3e207a2bb688bccae4517ad6abf148bae4cd",
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "c05550d90818f29d9070daaf0170d1a3e19347d7",
   "iOS" : [
     {
       "name" : "csenseTests",
-      "hash" : "3dc883fc371834dad607ebd99486ee256a1a66a8b2fb9272579c32ab422f84f7"
+      "hash" : "7b396ae85ccfc17637608e1b111e2bba77cc2920689e92110cf41cce79c6a8ba"
     }
   ]
 }

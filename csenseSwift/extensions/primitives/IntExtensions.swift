@@ -18,6 +18,9 @@ public extension Int {
         return self < 0
     }
 
+    /**
+     * If this number is positive (greater than 0)
+     */
     public var isPositive: Bool {
         return self > 0
     }
