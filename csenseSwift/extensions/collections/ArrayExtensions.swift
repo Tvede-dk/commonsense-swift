@@ -16,6 +16,9 @@ public extension Array {
         return index >= 0 && index < self.count
     }
 
+    /**
+     *
+     */
     public mutating func insertOrUpdate(index: Int, value: Element) -> Element? {
         let isValidIndex = self.isIndexValid(index)
         let result = getSafe(index: index)
@@ -27,6 +30,9 @@ public extension Array {
         return result
     }
 
+    /**
+     * Retrives an element at a given index,if the index is valid. nil otherwise.
+     */
     public func getSafe(index: Int) -> Element? {
         if isIndexValid(index) {
             return self[index]
@@ -44,13 +50,16 @@ public extension Array {
 
 public extension Optional where Wrapped: Collection {
     /**
-     *
+     * the count or zero if this optional is nil.
      */
     public var countOrZero: Wrapped.IndexDistance {
         return self?.count ?? 0
     }
 }
 
+/**
+ * Appends the righthand side to the left hand side.
+ */
 public func += <T>(left: inout [T], right: T) {
     left.append(right)
 }

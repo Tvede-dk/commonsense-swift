@@ -14,6 +14,9 @@ public extension Int {
         return self + (upperBound - self) / 2
     }
 
+    /**
+     * If this number is negative (less than 0)
+     */
     public var isNegative: Bool {
         return self < 0
     }
@@ -25,14 +28,23 @@ public extension Int {
         return self > 0
     }
 
+    /**
+     * If this number is negative or 0 (less than or equal to 0)
+     */
     public var isZeroOrNegative: Bool {
         return self <= 0
     }
 
+    /**
+     * If this number is positive or 0 (greater than or equal to 0)
+     */
     public var isZeroOrPositive: Bool {
         return self >= 0
     }
 
+    /**
+     * If this number is 0 (equal to 0)
+     */
     public var isZero: Bool {
         return self == 0
     }
@@ -40,7 +52,7 @@ public extension Int {
 
 public extension Optional where Wrapped == Int {
     /**
-     *   the current value iff not nil otherwise 0
+     * The current value iff not nil otherwise 0
      */
     public var orZero: Int {
         return self ?? 0
