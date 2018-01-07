@@ -15,7 +15,7 @@ class GeneralExtensionsTests: XCTestCase {
 
     func testIfNotNil() {
         var temp : String? = nil
-        temp.ifNotNil { str in
+        temp.ifNotNil { _ in
             failTests("should not be called on nil")
         }
         

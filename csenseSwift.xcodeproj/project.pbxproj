@@ -30,6 +30,7 @@
 		A7684D081FC9971D00B0367C /* cartfile.private in Resources */ = {isa = PBXBuildFile; fileRef = A7684D071FC9971D00B0367C /* cartfile.private */; };
 		A7684D0A1FC997E700B0367C /* csenseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7684D091FC997E700B0367C /* csenseTests.framework */; };
 		A7684D0B1FC99D1000B0367C /* csenseSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D3CD961FADE5E300A8633F /* csenseSwift.framework */; };
+		A7B06DD62000F35E00FAEDD6 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A7B06DD52000F35E00FAEDD6 /* .swiftlint.yml */; };
 		A7B880961FB114BA00D40077 /* FunctionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B880951FB114BA00D40077 /* FunctionExtensions.swift */; };
 		A7D3CDA71FADE5E400A8633F /* csenseSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = A7D3CD991FADE5E300A8633F /* csenseSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7D3CE3D1FADEA3900A8633F /* BoolExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3CE3C1FADEA3900A8633F /* BoolExtensions.swift */; };
@@ -71,6 +72,7 @@
 		A7684D071FC9971D00B0367C /* cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = cartfile.private; sourceTree = "<group>"; };
 		A7684D091FC997E700B0367C /* csenseTests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = csenseTests.framework; path = Carthage/Build/iOS/csenseTests.framework; sourceTree = "<group>"; };
 		A780FC4E1FAF92DD00D16449 /* csenseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = csenseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7B06DD52000F35E00FAEDD6 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		A7B880951FB114BA00D40077 /* FunctionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionExtensions.swift; sourceTree = "<group>"; };
 		A7D3CD961FADE5E300A8633F /* csenseSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = csenseSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D3CD991FADE5E300A8633F /* csenseSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = csenseSwift.h; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		A7D3CD8C1FADE5E300A8633F = {
 			isa = PBXGroup;
 			children = (
+				A7B06DD52000F35E00FAEDD6 /* .swiftlint.yml */,
 				A7684D071FC9971D00B0367C /* cartfile.private */,
 				A7D3CD981FADE5E300A8633F /* csenseSwift */,
 				A7D3CDA31FADE5E400A8633F /* csenseSwiftTests */,
@@ -284,6 +287,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7D3CDAA1FADE5E400A8633F /* Build configuration list for PBXNativeTarget "csenseSwift" */;
 			buildPhases = (
+				A7B06DDA2000F53600FAEDD6 /* swiftlint */,
 				A7D3CD911FADE5E300A8633F /* Sources */,
 				A7D3CD921FADE5E300A8633F /* Frameworks */,
 				A7D3CD931FADE5E300A8633F /* Headers */,
@@ -364,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7B06DD62000F35E00FAEDD6 /* .swiftlint.yml in Resources */,
 				A7684D081FC9971D00B0367C /* cartfile.private in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +396,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/sh\n\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n\n# make sure the output directory exists\n\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n\n# Step 1. Build Device and Simulator versions\n\nxcodebuild BITCODE_GENERATION_MODE=bitcode OTHER_CFLAGS=\"-fembed-bitcode\" -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build OTHER_LDFLAGS=\"-ObjC -fembed-bitcode\"\n\nxcodebuild BITCODE_GENERATION_MODE=bitcode OTHER_CFLAGS=\"-fembed-bitcode-marker\" -target \"${PROJECT_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build OTHER_LDFLAGS=\"-ObjC\"\n\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\n\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n\n# Step 3. Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\n\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/.\"\n\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\n\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule\"\n\nfi\n\n\n# Step 4. Create universal binary file using lipo and place the combined executable in the copied framework directory\n\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n\n\n# Step 5. Convenience step to copy the framework to the project's directory\n\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\n\n\n# Step 6. Convenience step to open the project's directory in Finder\n\nopen \"${BUILD_DIR}/${CONFIGURATION}-universal\"\n";
+		};
+		A7B06DDA2000F53600FAEDD6 /* swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint --config .swiftlint.yml\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
