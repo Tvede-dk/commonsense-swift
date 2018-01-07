@@ -23,4 +23,11 @@ public extension Collection {
             return result
         }
     }
+
+    /**
+     * true if this count is positive( > 0); false if empty.
+     */
+    public var isNotEmpty: Bool {
+        return !isEmpty
+    }
 }

@@ -59,4 +59,11 @@ class StringExtensionsTests: XCTestCase {
         "a".isNotEmpty.assert(true)
     }
 
+    func testUrlEncode() {
+        "".urlEncoded().assertNotNilEquals("")
+        " ".urlEncoded().assertNotNilEquals("%20")
+        "\r\n".urlEncoded().assertNotNilEquals("%0D%0A")
+        "test".urlEncoded().assertNotNilEquals("test")
+    }
+
 }

@@ -10,8 +10,12 @@ import Foundation
 
 public extension Dictionary where Key == Int {
 
+    /**
+     * Conviencne method for lookup up a indexPath in a dictionary of type [Int: Array]
+     * where the section will be used as the key ,and the row as the index in the array
+     */
     public func lookupElement<T>(at: IndexPath) -> T? where Key == Int, Value == [T] {
-        return self[at.section]?[at.row]
+        return self[at.section]?.getSafe(index: at.row)
     }
 
     /**

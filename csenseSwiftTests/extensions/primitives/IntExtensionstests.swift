@@ -52,6 +52,28 @@ class IntExtensionsTests: XCTestCase {
         100000.isNegative.assert(false)
     }
 
+    func testIsZeroOrPositive() {
+        0.isZeroOrPositive.assert(true, message: "0 is zero")
+        (0 - 1).isZeroOrPositive.assert(false)
+        (0 - 100).isZeroOrPositive.assert(false)
+        1.isZeroOrPositive.assert(true)
+        Int.max.isZeroOrPositive.assert(true)
+        Int.min.isZeroOrPositive.assert(false)
+        10.isZeroOrPositive.assert(true)
+        100000.isZeroOrPositive.assert(true)
+    }
+
+    func testIsZeroOrNegative() {
+        0.isZeroOrNegative.assert(true, message: "0 is zer0")
+        (0 - 1).isZeroOrNegative.assert(true)
+        (0 - 100).isZeroOrNegative.assert(true)
+        1.isZeroOrNegative.assert(false)
+        Int.max.isZeroOrNegative.assert(false)
+        Int.min.isZeroOrNegative.assert(true)
+        10.isZeroOrNegative.assert(false)
+        100000.isZeroOrNegative.assert(false)
+    }
+
     func testPerformTimes() {
         0.performTimes { (_) in
             failTests("should not be called")
@@ -75,6 +97,17 @@ class IntExtensionsTests: XCTestCase {
             counter22Times += 1
         }
         counter22Times.assert(22)
+    }
+
+    func testOptionalOrZero() {
+        let opt: Int? = nil
+        opt.orZero.assert(0)
+
+        let opt2: Int? = 42
+        opt2.orZero.assert(42)
+
+        let opt3: Int? = 0
+        opt3.orZero.assert(0)
     }
 
 }

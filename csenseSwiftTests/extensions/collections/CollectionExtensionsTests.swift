@@ -34,4 +34,13 @@ class CollectionExtensionsTests: XCTestCase {
             counter += 1
         }.assertCount(4)
     }
+
+    func testIsNotEmpty() {
+        [].isEmpty.assert(true)
+        [].isNotEmpty.assert(false)
+
+        [""].isEmpty.assert(false)
+        [""].isNotEmpty.assert(true)
+
+    }
 }

@@ -40,12 +40,7 @@ public extension Array {
             return nil
         }
     }
-    /**
-     * true if this count is positive( > 0); false if empty.
-     */
-    public var isNotEmpty: Bool {
-        return !isEmpty
-    }
+
 }
 
 public extension Optional where Wrapped: Collection {
