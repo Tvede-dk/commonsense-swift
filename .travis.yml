@@ -3,4 +3,4 @@ language: objective-c
 xcode_project: csenseSwift.xcodeproj
 xcode_scheme: csenseSwift
 
-script: xcodebuild clean && xcodebuild test build -project csenseSwift.xcodeproj -scheme csenseSwift
+script: xcodebuild clean && xcodebuild test build -project csenseSwift.xcodeproj -scheme csenseSwift -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3'
