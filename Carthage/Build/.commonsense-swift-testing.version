@@ -8,11 +8,11 @@
   "tvOS" : [
 
   ],
-  "commitish" : "c05550d90818f29d9070daaf0170d1a3e19347d7",
+  "commitish" : "a6f8554dfb12cb4a6a1c94f14ff42f9ff2b2083b",
   "iOS" : [
     {
       "name" : "csenseTests",
-      "hash" : "7b396ae85ccfc17637608e1b111e2bba77cc2920689e92110cf41cce79c6a8ba"
+      "hash" : "0e08056eeb5d3d594ed6fde52fb988da0264efdc29a579118d4539f455c59c5c"
     }
   ]
 }
