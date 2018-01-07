@@ -11,6 +11,8 @@ public typealias MutatingFunction<T> = (inout T) -> Void
 
 public typealias FunctionResult<T, U> = (T) -> U
 
+public typealias Function2Result<T, TT, U> = (T, TT) -> U
+
 public typealias EmptyFunctionResult<U> = () -> U
 
 public typealias EmptyFunction = () -> Void

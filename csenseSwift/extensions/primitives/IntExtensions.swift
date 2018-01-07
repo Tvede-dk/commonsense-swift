@@ -48,6 +48,21 @@ public extension Int {
     public var isZero: Bool {
         return self == 0
     }
+
+    /**
+     * Performs the times the value of this int, the given action.
+     * so if the value is 2 then the action is performed 2 times.
+     * if the value is negative or 0 nothing happens.
+     * the value is passed to the action.
+     */
+    public func performTimes(action: Function<Int>) {
+        if self.isZeroOrNegative {
+            return
+        }
+        for counter in 0 ... self - 1 {
+            action(counter)
+        }
+    }
 }
 
 public extension Optional where Wrapped == Int {
