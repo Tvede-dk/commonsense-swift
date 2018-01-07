@@ -16,11 +16,11 @@ class FunctionExtensionsTests: XCTestCase {
         isAnyNotNil(nil).assert(false)
         isAnyNotNil().assert(true)
     }
-    
-    func testIsAnyNil(){
+
+    func testIsAnyNil() {
         isAnyNil(nil, "").assert(true)
         isAnyNil("nil", "").assert(false)
-        isAnyNil("nil", "",nil).assert(true)
+        isAnyNil("nil", "", nil).assert(true)
         isAnyNil("nil", "", 23).assert(false)
         isAnyNil(nil).assert(true)
         isAnyNil().assert(false)

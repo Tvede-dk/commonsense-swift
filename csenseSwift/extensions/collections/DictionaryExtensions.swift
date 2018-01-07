@@ -44,7 +44,7 @@ public extension Dictionary {
         self.updateValue(list, forKey: key)
     }
 }
-
+/*
 public extension OrderedDictionary where Key == Int {
     public func lookupElement<T>(at: IndexPath) -> T? where Key == Int, Value == [T] {
         return self[at.section]?[at.row]
@@ -54,7 +54,7 @@ public extension OrderedDictionary where Key == Int {
      * Gets the element at the given index (so if we have a sparse array of
      [0 : *, 2 : **] then calling with index of 1 , gives the last element
      */
-    public func ElementByIndex(index: Int) -> Value? {
+    public func elementByIndex(index: Int) -> Value? {
         if !isIndexValid(index) {
             return nil
         }
@@ -89,3 +89,4 @@ public extension OrderedDictionary {
         self.updateValue(list, forKey: key)
     }
 }
+*/

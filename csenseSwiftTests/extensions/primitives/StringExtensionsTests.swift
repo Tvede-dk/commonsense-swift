@@ -42,7 +42,7 @@ class StringExtensionsTests: XCTestCase {
         "  abc ".isBlank.assert(false)
     }
 
-    func testIsNotBlank(){
+    func testIsNotBlank() {
         "".isNotBlank.assert(false)
         " ".isNotBlank.assert(false)
         "  ".isNotBlank.assert(false)
@@ -52,12 +52,11 @@ class StringExtensionsTests: XCTestCase {
         " abc ".isNotBlank.assert(true)
         "  abc ".isNotBlank.assert(true)
     }
-    
-    func testIsNotEmpty(){
+
+    func testIsNotEmpty() {
         "".isNotEmpty.assert(false)
         " ".isNotEmpty.assert(true)
         "a".isNotEmpty.assert(true)
     }
-    
-    
+
 }

@@ -88,18 +88,18 @@ public class SortedArray<T> {
     }
 }
 
-public func ==<T>(first: SortedArrayIndex<T>, second: SortedArrayIndex<T>) -> Bool where T: Equatable {
+public func == <T>(first: SortedArrayIndex<T>, second: SortedArrayIndex<T>) -> Bool where T: Equatable {
     return first.value == second.value
 }
 
-public func ==<T>(first: [SortedArrayIndex<T>], second: [SortedArrayIndex<T>]) -> Bool where T: Equatable {
+public func == <T>(first: [SortedArrayIndex<T>], second: [SortedArrayIndex<T>]) -> Bool where T: Equatable {
     return first.elementsEqual(second) { (first: SortedArrayIndex<T>, second: SortedArrayIndex<T>) in
         return first == second
     }
 }
 
 public extension SortedArray where T: Equatable {
-    public static func ==(first: SortedArray, second: SortedArray) -> Bool {
+    public static func == (first: SortedArray, second: SortedArray) -> Bool {
         if first.count != second.count {
             return false
         }

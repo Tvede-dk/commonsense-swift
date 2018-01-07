@@ -29,8 +29,11 @@ public extension Int {
     public var isZeroOrPositive: Bool {
         return self >= 0
     }
-}
 
+    public var isZero: Bool {
+        return self == 0
+    }
+}
 
 public extension Optional where Wrapped == Int {
     /**
