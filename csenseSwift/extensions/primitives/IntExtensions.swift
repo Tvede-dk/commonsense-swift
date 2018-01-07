@@ -55,13 +55,27 @@ public extension Int {
      * if the value is negative or 0 nothing happens.
      * the value is passed to the action.
      */
-    public func performTimes(action: Function<Int>) {
-        if self.isZeroOrNegative {
+    public func performTimes(fromValue: Int = 0,
+                             action: Function<Int>) {
+        if self.isZeroOrNegative || fromValue.isNegative {
             return
         }
-        for counter in 0 ... self - 1 {
+        for counter in fromValue ... self - 1 {
             action(counter)
         }
+    }
+
+    /**
+     * maps the number from (default 0) to this value.
+     * the same as (fromValue ... self -1).map(generator)
+     */
+    public func mapTimes<T>(fromValue: Int = 0,
+                            generator: FunctionResult<Int, T>) -> [T] {
+        var result: [T] = []
+        performTimes(fromValue: fromValue, action: { (value) in
+            result += generator(value)
+        })
+        return result
     }
 }
 
