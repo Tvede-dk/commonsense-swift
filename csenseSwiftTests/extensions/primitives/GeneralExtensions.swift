@@ -9,6 +9,7 @@ import csenseTests
 import XCTest
 
 class GeneralExtensionsTests: XCTestCase {
+
     func testUseIfSafe() {
 
     }
@@ -33,6 +34,16 @@ class GeneralExtensionsTests: XCTestCase {
         temp.valueOr("test").assert("test")
         temp = "1234"
         temp.valueOr("no").assert("1234")
+    }
+
+    func testIsNil() {
+        let opt : Any? = nil
+        opt.isNil.assert(true, message: "should say nil is nil")
+        let optNonNil : Any? = 42
+        optNonNil.isNil.assert(false, message: "42 is not nil")
+    }
+
+    func testIsNotNil() {
 
     }
 }

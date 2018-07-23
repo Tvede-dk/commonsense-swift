@@ -9,6 +9,7 @@
 import Foundation
 
 public extension Array {
+
     /**
      * Tells if there is a key with the given index
      */
@@ -31,7 +32,9 @@ public extension Array {
     }
 
     /**
-     * Retrives an element at a given index,if the index is valid. nil otherwise.
+     * Retries an element at a given index,
+     * if the index is valid.
+     * nil otherwise.
      */
     public func getSafe(index: Int) -> Element? {
         if isIndexValid(index) {
@@ -45,7 +48,7 @@ public extension Array {
      * Repeats this collection to the designated size, will loop over all content and copy that in order
      * if the to size is less than, or this collection is empty, then an empty result will be returned
      */
-    public func repeate(toSize: Int) -> [Element] {
+    public func repeats(toSize: Int) -> [Element] {
         guard let first = first, toSize > count else {
             return []
         }
@@ -55,20 +58,27 @@ public extension Array {
             return self.getSafe(index: safeIndex) ?? first
         })
     }
+
+    /**
+     * true if this count is positive( > 0); false if empty.
+     */
+    public var isNotEmpty: Bool {
+        return !isEmpty
+    }
 }
 
 public extension Optional where Wrapped: Collection {
     /**
      * the count or zero if this optional is nil.
      */
-    public var countOrZero: Wrapped.IndexDistance {
+    public var countOrZero: Int {
         return self?.count ?? 0
     }
 }
 
 /**
- * Appends the righthand side to the left hand side.
+ * Appends the right hand side to the left hand side.
  */
-public func += <T>(left: inout [T], right: T) {
+public func +=<T>(left: inout [T], right: T) {
     left.append(right)
 }

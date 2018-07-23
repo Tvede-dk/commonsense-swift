@@ -22,6 +22,14 @@ public extension Bool {
     }
 
     /**
+     * maps a boolean lazy into either of the given functions depending on the value.
+     */
+    public func mapLazy<T>(ifTrue: @escaping EmptyFunctionResult<T>,
+                           ifFalse: @escaping EmptyFunctionResult<T>) -> T {
+        return map(ifTrue: ifTrue, ifFalse: ifFalse)()
+    }
+
+    /**
      * Performs the given action iff the value is true, otherwise nothing happens
      */
     public func ifTrue(_ action: EmptyFunction) {

@@ -60,7 +60,7 @@ public extension Int {
         if self.isZeroOrNegative || fromValue.isNegative {
             return
         }
-        for counter in fromValue ... self - 1 {
+        for counter in fromValue...self - 1 {
             action(counter)
         }
     }

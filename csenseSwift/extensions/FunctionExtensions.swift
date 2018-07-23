@@ -9,7 +9,7 @@
 import Foundation
 
 /**
- Creates a safe method pointer for use in allocing closures.
+ Creates a safe method pointer for use in allocating closures.
  */
 // see http://blog.xebia.com/function-references-in-swift-and-retain-cycles/
 public func methodPointer<T: AnyObject>(obj: T,
@@ -47,7 +47,7 @@ public func methodPointer<T: AnyObject, Out>(obj: T,
 }
 
 /**
- Creates a safe method pointer for use in allocing closures.
+ Creates a safe method pointer for use in allocating closures.
  */
 // see http://blog.xebia.com/function-references-in-swift-and-retain-cycles/
 public func methodPointer<T: AnyObject, In, Out>(obj: T,

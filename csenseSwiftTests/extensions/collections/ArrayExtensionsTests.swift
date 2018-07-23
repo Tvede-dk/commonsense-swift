@@ -4,9 +4,9 @@
 //
 
 import Foundation
-@testable import csenseSwift
 import XCTest
 import csenseTests
+@testable import csenseSwift
 
 public class ArrayExtensionsTests: XCTestCase {
 
@@ -79,11 +79,11 @@ public class ArrayExtensionsTests: XCTestCase {
         arr.assertCount(2)
     }
 
-    func testRepeateToSize(){
+    func testRepeateToSize() {
         var arr = emptyArr
-        arr.repeate(toSize: 20).assertCount(0, message: "empty is hard to repeate")
+        arr.repeats(toSize: 20).assertCount(0, message: "empty is hard to repeate")
         arr.append(42)
         arr.assertCount(1)
-        arr.repeate(toSize: 20).assertCount(20)
+        arr.repeats(toSize: 20).assertCount(20)
     }
 }

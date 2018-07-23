@@ -11,7 +11,7 @@ import Foundation
 public extension Dictionary where Key == Int {
 
     /**
-     * Conviencne method for lookup up a indexPath in a dictionary of type [Int: Array]
+     * Continence method for lookup up a indexPath in a dictionary of type [Int: Array]
      * where the section will be used as the key ,and the row as the index in the array
      */
     public func lookupElement<T>(at: IndexPath) -> T? where Key == Int, Value == [T] {
@@ -31,16 +31,23 @@ public extension Dictionary where Key == Int {
     }
 
     /**
-     * Tells if theres a key with the given index
+     * Tells if there is a key with the given index
      */
     public func isIndexValid(_ index: Int) -> Bool {
         return index >= 0 && index < self.count
+    }
+
+    /**
+     * true if this count is positive( > 0); false if empty.
+     */
+    public var isNotEmpty: Bool {
+        return !isEmpty
     }
 }
 
 public extension Dictionary {
     /**
-     * safely adds an item for a given key or creates a new array with the item if not pressented
+     * safely adds an item for a given key or creates a new array with the item if not presented
      */
     public mutating func addOrCreate<T>(key: Key, item: T) where Value == [T] {
         var list = self[key] ?? []

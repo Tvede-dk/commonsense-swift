@@ -33,13 +33,13 @@ public func isCalledRecursive(callingFunction: String = #function, className: St
     return afterDropped.contains(where: findFunction)
 }
 
-public extension String {
+internal extension String {
     /**
      * if the string is like a function in swift ( "someFunction(parameters)"), then
      * calling this will strip all parameters ect.
      */
 
-    public func stripFunctionName() -> String {
+    internal func stripFunctionName() -> String {
         //function names will include "name(parameters..)"
         if let range = self.range(of: "(") {
             let endIndex = self.index(before: range.lowerBound)
