@@ -1,18 +1,9 @@
 {
-  "Mac" : [
-
-  ],
-  "watchOS" : [
-
-  ],
-  "tvOS" : [
-
-  ],
-  "commitish" : "a6f8554dfb12cb4a6a1c94f14ff42f9ff2b2083b",
+  "commitish" : "e338da7546028b1aadeb013c1d58cb34056f3653",
   "iOS" : [
     {
       "name" : "csenseTests",
-      "hash" : "8d006546a9670ce0e65d50b33efacc2e05a6672e26567683f0a05a7278a5e5b7"
+      "hash" : "09e1b093a082ad01e3a70d38c18b8a303c39e2bf167ebc4c2af050600c317fb8"
     }
   ]
 }

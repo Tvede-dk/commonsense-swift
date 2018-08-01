@@ -21,7 +21,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		A70E4325202E4F9400180457 /* csenseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E4324202E4F9400180457 /* csenseTests.framework */; };
 		A713AC7C1FB1F0E30010BD7E /* OptionalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A713AC7B1FB1F0E30010BD7E /* OptionalExtensions.swift */; };
 		A72802801FCA1AAC004BDC8A /* AdvancedFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A728027F1FCA1AAC004BDC8A /* AdvancedFunctions.swift */; };
 		A7343EB91FDC7A94009CB044 /* AdvancedFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7343EB81FDC7A94009CB044 /* AdvancedFunctionsTests.swift */; };
@@ -55,6 +54,9 @@
 		BC236D050D4930F7A1F9FA81 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2367905B1D32DBABE5D7E3 /* StringExtensionsTests.swift */; };
 		BC236D197670BEB3D7117ACB /* ArrayExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2365992A05013D3B470B47 /* ArrayExtensionsTests.swift */; };
 		BC236D47B9235270EECC7B22 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC236035EB1EA9C593D28811 /* Types.swift */; };
+		CE45993321126C9B0076B76B /* GeneralFunctional.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45993221126C9B0076B76B /* GeneralFunctional.swift */; };
+		CE459935211273CD0076B76B /* CharacterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE459934211273CD0076B76B /* CharacterTests.swift */; };
+		CE6853F321065C4000BBB52A /* csenseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7684D091FC997E700B0367C /* csenseTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,9 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A70E4324202E4F9400180457 /* csenseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = csenseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A713AC7B1FB1F0E30010BD7E /* OptionalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtensions.swift; sourceTree = "<group>"; };
-		A720D412202842AC005925E2 /* csenseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = csenseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A728027F1FCA1AAC004BDC8A /* AdvancedFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedFunctions.swift; sourceTree = "<group>"; };
 		A7343EB81FDC7A94009CB044 /* AdvancedFunctionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedFunctionsTests.swift; sourceTree = "<group>"; };
 		A75E3F8D20029F0C001D9E2C /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
@@ -82,7 +82,6 @@
 		A7646D2C1FB555DF0011BBEF /* IntExtensionstests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensionstests.swift; sourceTree = "<group>"; };
 		A7684D071FC9971D00B0367C /* cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = cartfile.private; sourceTree = "<group>"; };
 		A7684D091FC997E700B0367C /* csenseTests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = csenseTests.framework; path = Carthage/Build/iOS/csenseTests.framework; sourceTree = "<group>"; };
-		A780FC4E1FAF92DD00D16449 /* csenseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = csenseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B06DD52000F35E00FAEDD6 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		A7B880951FB114BA00D40077 /* FunctionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionExtensions.swift; sourceTree = "<group>"; };
 		A7D3CD961FADE5E300A8633F /* csenseSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = csenseSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +108,8 @@
 		BC236D49E5801EFA68681BD5 /* GeneralExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralExtensions.swift; sourceTree = "<group>"; };
 		BC236E27DAC38FD34542D495 /* CharExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharExtensions.swift; sourceTree = "<group>"; };
 		BC236FE13E4CF4FD6D7B9C52 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		CE45993221126C9B0076B76B /* GeneralFunctional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralFunctional.swift; sourceTree = "<group>"; };
+		CE459934211273CD0076B76B /* CharacterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A70E4325202E4F9400180457 /* csenseTests.framework in Frameworks */,
+				CE6853F321065C4000BBB52A /* csenseTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,10 +142,7 @@
 		A780FC4C1FAF92DD00D16449 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A70E4324202E4F9400180457 /* csenseTests.framework */,
-				A720D412202842AC005925E2 /* csenseTests.framework */,
 				A7684D091FC997E700B0367C /* csenseTests.framework */,
-				A780FC4E1FAF92DD00D16449 /* csenseTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -199,6 +197,7 @@
 		A7D3CE3A1FADEA3900A8633F /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CE45993121126C830076B76B /* funcitonal */,
 				A7D3CE4A1FAE7D6600A8633F /* collections */,
 				A7D3CE3B1FADEA3900A8633F /* primitives */,
 				A7B880951FB114BA00D40077 /* FunctionExtensions.swift */,
@@ -240,6 +239,7 @@
 				A7646D2C1FB555DF0011BBEF /* IntExtensionstests.swift */,
 				BC236D49E5801EFA68681BD5 /* GeneralExtensions.swift */,
 				A75E3F952002B868001D9E2C /* GlobalFunctionsTests.swift */,
+				CE459934211273CD0076B76B /* CharacterTests.swift */,
 			);
 			path = primitives;
 			sourceTree = "<group>";
@@ -287,6 +287,14 @@
 				BC23678CF58380FC218B17A4 /* BinarySearchTests.swift */,
 			);
 			path = algorithms;
+			sourceTree = "<group>";
+		};
+		CE45993121126C830076B76B /* funcitonal */ = {
+			isa = PBXGroup;
+			children = (
+				CE45993221126C9B0076B76B /* GeneralFunctional.swift */,
+			);
+			path = funcitonal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,7 +438,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint --config .swiftlint.yml\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "#if which swiftlint >/dev/null; then\n#swiftlint --config .swiftlint.yml\n#else\n#echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -456,6 +464,7 @@
 				BC2363BB8B1176754AB42430 /* FloatExtensions.swift in Sources */,
 				BC2365578B89B4315E3E87C8 /* SetExtensions.swift in Sources */,
 				BC236A5C2B466570279724E0 /* CharExtensions.swift in Sources */,
+				CE45993321126C9B0076B76B /* GeneralFunctional.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +474,7 @@
 			files = (
 				A7D3CE661FAE950E00A8633F /* DictionaryExtensionsTests.swift in Sources */,
 				A7343EB91FDC7A94009CB044 /* AdvancedFunctionsTests.swift in Sources */,
+				CE459935211273CD0076B76B /* CharacterTests.swift in Sources */,
 				A7D3CE411FADEA4000A8633F /* BoolExtensionsTests.swift in Sources */,
 				A7646D2D1FB555DF0011BBEF /* IntExtensionstests.swift in Sources */,
 				BC236D050D4930F7A1F9FA81 /* StringExtensionsTests.swift in Sources */,
