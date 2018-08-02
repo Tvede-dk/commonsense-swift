@@ -201,7 +201,7 @@
 		A7D3CE3A1FADEA3900A8633F /* extensions */ = {
 			isa = PBXGroup;
 			children = (
-				CE45993121126C830076B76B /* funcitonal */,
+				CE45993121126C830076B76B /* functional */,
 				A7D3CE4A1FAE7D6600A8633F /* collections */,
 				A7D3CE3B1FADEA3900A8633F /* primitives */,
 				A7B880951FB114BA00D40077 /* FunctionExtensions.swift */,
@@ -294,14 +294,6 @@
 			path = algorithms;
 			sourceTree = "<group>";
 		};
-		CE45993121126C830076B76B /* funcitonal */ = {
-			isa = PBXGroup;
-			children = (
-				CE45993221126C9B0076B76B /* GeneralFunctional.swift */,
-			);
-			path = funcitonal;
-			sourceTree = "<group>";
-		};
 		BC236C86DB1E3F099BFBC9EC /* numbers */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +301,14 @@
 				BC236CFB1857D44F2BDD47B3 /* UInt.swift */,
 			);
 			path = numbers;
+			sourceTree = "<group>";
+		};
+		CE45993121126C830076B76B /* functional */ = {
+			isa = PBXGroup;
+			children = (
+				CE45993221126C9B0076B76B /* GeneralFunctional.swift */,
+			);
+			path = functional;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
