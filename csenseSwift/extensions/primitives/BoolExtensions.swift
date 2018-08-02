@@ -2,7 +2,7 @@
 //  BoolExtensions.swift
 //  csenseIosBase
 //
-//  Created by Kasper T on 03/11/2017.
+//  Created by Kasper T
 //  Copyright © 2017 commonsense. All rights reserved.
 //
 

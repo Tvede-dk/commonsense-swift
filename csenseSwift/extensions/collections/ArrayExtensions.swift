@@ -79,6 +79,6 @@ public extension Optional where Wrapped: Collection {
 /**
  * Appends the right hand side to the left hand side.
  */
-public func +=<T>(left: inout [T], right: T) {
+public func += <T>(left: inout [T], right: T) {
     left.append(right)
 }

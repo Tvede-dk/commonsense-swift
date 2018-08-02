@@ -2,7 +2,7 @@
 //  GeneralExtensions.swift
 //  csenseSwift
 //
-//  Created by Kasper T on 07/11/2017.
+//  Created by Kasper T
 //  Copyright © 2017 commonsense. All rights reserved.
 //
 

@@ -40,6 +40,7 @@
 		A7D3CE4C1FAE7D7700A8633F /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3CE4B1FAE7D7700A8633F /* ArrayExtensions.swift */; };
 		A7D3CE4F1FAE8A4A00A8633F /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3CE4E1FAE8A4A00A8633F /* DictionaryExtensions.swift */; };
 		A7D3CE661FAE950E00A8633F /* DictionaryExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D3CE651FAE950E00A8633F /* DictionaryExtensionsTests.swift */; };
+		BC236064D143A1081C4D5074 /* UInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC236CFB1857D44F2BDD47B3 /* UInt.swift */; };
 		BC23607F4E8E5BF085910B37 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC236218CD33287D4900F371 /* DoubleExtensions.swift */; };
 		BC23608F7D5B453D54570ADF /* SortedArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC236A796F8E50EBA0FF59F4 /* SortedArrayTests.swift */; };
 		BC2362D248FD291837EFDC0D /* BinarySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC23678CF58380FC218B17A4 /* BinarySearchTests.swift */; };
@@ -54,6 +55,7 @@
 		BC236D050D4930F7A1F9FA81 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2367905B1D32DBABE5D7E3 /* StringExtensionsTests.swift */; };
 		BC236D197670BEB3D7117ACB /* ArrayExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2365992A05013D3B470B47 /* ArrayExtensionsTests.swift */; };
 		BC236D47B9235270EECC7B22 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC236035EB1EA9C593D28811 /* Types.swift */; };
+		BC236F1EB121B624466A31C2 /* UInt8.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2363B6E766D0CF248358DD /* UInt8.swift */; };
 		CE45993321126C9B0076B76B /* GeneralFunctional.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45993221126C9B0076B76B /* GeneralFunctional.swift */; };
 		CE459935211273CD0076B76B /* CharacterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE459934211273CD0076B76B /* CharacterTests.swift */; };
 		CE6853F321065C4000BBB52A /* csenseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7684D091FC997E700B0367C /* csenseTests.framework */; };
@@ -97,6 +99,7 @@
 		BC236035EB1EA9C593D28811 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		BC236218CD33287D4900F371 /* DoubleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 		BC23622CD4EB19D54352D49B /* SetExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetExtensions.swift; sourceTree = "<group>"; };
+		BC2363B6E766D0CF248358DD /* UInt8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UInt8.swift; sourceTree = "<group>"; };
 		BC2365992A05013D3B470B47 /* ArrayExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionsTests.swift; sourceTree = "<group>"; };
 		BC23670A833E39D2C5793553 /* FloatExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatExtensions.swift; sourceTree = "<group>"; };
 		BC23678CF58380FC218B17A4 /* BinarySearchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinarySearchTests.swift; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 		BC2369C186A07024A1DFCA26 /* IntExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
 		BC236A796F8E50EBA0FF59F4 /* SortedArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedArrayTests.swift; sourceTree = "<group>"; };
 		BC236AEA20E7A1244CDB0F49 /* GlobalFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
+		BC236CFB1857D44F2BDD47B3 /* UInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UInt.swift; sourceTree = "<group>"; };
 		BC236D49E5801EFA68681BD5 /* GeneralExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralExtensions.swift; sourceTree = "<group>"; };
 		BC236E27DAC38FD34542D495 /* CharExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharExtensions.swift; sourceTree = "<group>"; };
 		BC236FE13E4CF4FD6D7B9C52 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 				BC236218CD33287D4900F371 /* DoubleExtensions.swift */,
 				BC23670A833E39D2C5793553 /* FloatExtensions.swift */,
 				BC236E27DAC38FD34542D495 /* CharExtensions.swift */,
+				BC236C86DB1E3F099BFBC9EC /* numbers */,
 			);
 			path = primitives;
 			sourceTree = "<group>";
@@ -295,6 +300,15 @@
 				CE45993221126C9B0076B76B /* GeneralFunctional.swift */,
 			);
 			path = funcitonal;
+			sourceTree = "<group>";
+		};
+		BC236C86DB1E3F099BFBC9EC /* numbers */ = {
+			isa = PBXGroup;
+			children = (
+				BC2363B6E766D0CF248358DD /* UInt8.swift */,
+				BC236CFB1857D44F2BDD47B3 /* UInt.swift */,
+			);
+			path = numbers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,6 +478,8 @@
 				BC2363BB8B1176754AB42430 /* FloatExtensions.swift in Sources */,
 				BC2365578B89B4315E3E87C8 /* SetExtensions.swift in Sources */,
 				BC236A5C2B466570279724E0 /* CharExtensions.swift in Sources */,
+				BC236F1EB121B624466A31C2 /* UInt8.swift in Sources */,
+				BC236064D143A1081C4D5074 /* UInt.swift in Sources */,
 				CE45993321126C9B0076B76B /* GeneralFunctional.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

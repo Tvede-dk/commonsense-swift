@@ -1,5 +1,5 @@
 //
-// Created by Kasper Tvede on 06/07/2018.
+// Created by Kasper Tvede
 // Copyright (c) 2018 commonsense. All rights reserved.
 //
 
