@@ -14,10 +14,10 @@ extension Double {
     }
 
     /**
-     * if this value is positive (above or equal to 0, inclusive 0)
+     * if this value is positive (above or equal to 0, not inclusive 0)
      */
     var isPositive: Bool {
-        return self >= 0
+        return self > 0
     }
 
 

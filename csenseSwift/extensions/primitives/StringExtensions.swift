@@ -44,4 +44,20 @@ public extension String {
         return self.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
     }
 
+    /// Returns the element at the specified index iff it is within bounds, otherwise nil.
+    public subscript(index: UInt) -> Character? {
+        guard index < count else {
+            return nil
+        }
+        return self[String.Index(encodedOffset: Int(index))]
+    }
+
+    /// Returns the element at the specified index iff it is within bounds, otherwise nil.
+    public subscript(index: Int) -> Character? {
+        guard index >= 0 else {
+            return nil
+        }
+        return self[index.toUInt()]
+    }
+
 }

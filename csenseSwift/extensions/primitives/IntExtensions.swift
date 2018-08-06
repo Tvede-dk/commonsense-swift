@@ -77,6 +77,10 @@ public extension Int {
         })
         return result
     }
+
+    public func toUInt() -> UInt {
+        return UInt(self)
+    }
 }
 
 public extension Optional where Wrapped == Int {
