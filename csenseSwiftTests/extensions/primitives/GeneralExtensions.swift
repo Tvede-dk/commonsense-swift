@@ -17,7 +17,7 @@ class GeneralExtensionsTests: XCTestCase {
     func testIfNotNil() {
         var temp: String? = nil
         temp.ifNotNil { _ in
-            failTests("should not be called on nil")
+            failTest("should not be called on nil")
         }
 
         temp = "magic"
@@ -37,9 +37,9 @@ class GeneralExtensionsTests: XCTestCase {
     }
 
     func testIsNil() {
-        let opt : Any? = nil
+        let opt: Any? = nil
         opt.isNil.assert(true, message: "should say nil is nil")
-        let optNonNil : Any? = 42
+        let optNonNil: Any? = 42
         optNonNil.isNil.assert(false, message: "42 is not nil")
     }
 

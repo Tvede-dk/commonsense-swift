@@ -60,4 +60,20 @@ public extension String {
         return self[index.toUInt()]
     }
 
+    ///
+    /// Simple shorthand for data(using encoding).
+    /// default encoding is utf16 due to it being the standard
+    ///
+    public func toData(encoding: String.Encoding = .utf16) -> Data? {
+        return data(using: encoding)
+    }
+
+    /// The length of the string (its count).
+    ///TODO should be unit ? since strings length cannot be negative ?? hmm and insert standard link
+    // returns the "length" by the standard
+
+    public var length: Int {
+        return self.count
+    }
+
 }
